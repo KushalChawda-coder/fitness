@@ -1,0 +1,136 @@
+/* This file is reserved for overriding and extending the template styles. */
+.sec-action{
+    position: absolute;
+    right: 60px;
+    top:6px;
+    z-index: 9;
+}
+
+.megamenu {
+    max-height: 300px;
+    overflow-y: auto;
+}
+.megamenu {
+    width: 240px;
+}
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+input.file-upload {
+    position: relative;
+    z-index: 9;
+    width: 30px;
+    height: 30px;
+    top: 30px;
+    left: -30px;
+    border-radius: 100px;
+    opacity: 0;
+    cursor: progress;
+}
+
+.text-ellipsis--1 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+@media only screen and (max-width: 767px)
+{
+    .billing-table .table th, 
+    .billing-table .table td, 
+    .billing-table .table td .btn {
+        padding: 0.45rem;
+        vertical-align: middle;
+        border-top: 1px solid #dee2e6;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 1400px)
+{
+    .pin-button {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+}
+@media only screen and (max-width: 1399px)
+{
+    .pin-button {
+        display: none!important;
+    }
+}
+
+
+.grid-image .workout--image {
+    height: 60px;
+    width: 80px;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+.min-h-100px {
+    min-height: 100px!important;
+}
+.bgi-no-repeat {
+    background-repeat: no-repeat;
+}
+.bgi-position-center {
+    background-position: center;
+}
+.bgi-size-cover {
+    background-size: cover;
+}
+.workoutexercise__img {
+    width: 63px;
+    height: 36px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    font-size: 14px;
+    height: 100px;
+    width: 100%;
+}
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+.edit-image .imagecheck-uncheck-box {
+    top: 10px;
+    right: 10px;
+}
+.edit-image .btn-delete {
+    bottom: 10px;
+    right: 14px;
+}
+.edit-image .btn-delete, .edit-image .imagecheck-uncheck-box {
+    position: absolute;
+}
