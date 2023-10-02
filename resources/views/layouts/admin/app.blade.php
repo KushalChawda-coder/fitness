@@ -54,11 +54,12 @@
 
   <link rel="stylesheet" href="{{ asset('assets/admin/css/main.css?time='.@$time) }}" />
   <script src="{{ asset('assets/admin/js/base/loader.js?time='.@$time) }}"></script>
+  @livewireStyles
 </head>
 
 <body>
   <div id="root">
-    @include('layouts.admin.sidebar')
+    <livewire:sidebar />
     <main>
       @if(session('success'))
         <div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true" style="position: fixed;right: 50px; z-index: 111;">
@@ -91,4 +92,5 @@
       @yield('content')
     </main>
   </div>
+   @livewireScripts
   @include('layouts.admin.footer')

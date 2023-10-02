@@ -74,8 +74,8 @@ Route::middleware('auth')->group(function () {
                 Route::post('/update-website', [LeadController::class, 'updateWebsite'])->name('leads.update-website');
                 Route::post('/upload-exploreImage', [LeadController::class, 'uploadExploreImage'])->name('leads.upload-exploreImage');
                 Route::post('/delete-exploreImage', [LeadController::class, 'deleteExploreImage'])->name('leads.delete-exploreImage');
-
-
+                
+                Route::get('/test', [LeadController::class, 'test'])->name('leads.test');
                 Route::post('/upload-planBgImage', [LeadController::class, 'uploadPlanBgImage'])->name('leads.upload-planBgImage');
                 Route::post('/upload-classBgImage', [LeadController::class, 'uploadClassBgImage'])->name('leads.upload-classBgImage');
 

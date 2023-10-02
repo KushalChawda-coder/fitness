@@ -15,6 +15,7 @@ use Illuminate\Support\{ Arr, Str };
 use App\Services\Leads\LeadWebsiteService;
 use App\Services\AjaxPagination\AjaxPagination;
 use Illuminate\Support\Facades\Session;
+use Faker\Factory as Faker;
 
 
 class LeadController extends Controller
@@ -32,8 +33,8 @@ class LeadController extends Controller
     public function index(Request $request)
     {
         $locations = Leads::distinct('location')->pluck('location');
-        $tags_data = LeadsNote::distinct('tags')->pluck('tags')->toArray();
-        $tags_data = array_values(array_filter($tags_data)); // Remove empty values and reset indexes
+        $tags_data = LeadsNote::distinct('tags')->pluck('tags')->values()->toArray();
+        // $tags_data = array_values(array_filter($tags_data)); // Remove empty values and reset indexes
 
         $tagArray = [];
         $requestData = [];
@@ -46,14 +47,14 @@ class LeadController extends Controller
         $tags = array_unique($tagArray);
         $leads = Leads::latest()->paginate(10);
       
-        return view('admin.Leads.index',['data' => $leads,'locations' => $locations, 'tags' => $tags]);
+        return view('admin.Leads.index',['locations' => $locations, 'tags' => $tags]);
     }
 
     public function filter(Request $request){
         if ($request->has('filter_btn')) {
             $locations = Leads::distinct('location')->pluck('location');
-            $tags_data = LeadsNote::distinct('tags')->pluck('tags')->toArray();
-            $tags_data = array_values(array_filter($tags_data)); 
+            $tags_data = LeadsNote::distinct('tags')->pluck('tags')->values()->toArray();
+            // $tags_data = array_values(array_filter($tags_data)); 
             
             $tagArray = [];
             $requestData = [];
@@ -106,6 +107,7 @@ class LeadController extends Controller
                     $query = $query->where('location', $requestData['area']);
                 }
                 $leads = $query->latest()->paginate(10);
+                // dd($leads);
                 return view('admin.Leads.index',['data' => $leads,'locations' => $locations, 'tags' => $tags , 'filter' => $filter_input]);
             }
             
@@ -768,5 +770,49 @@ class LeadController extends Controller
         } catch (\Exception $e) {
             return response()->json(['status' => false, 'message' => 'Something Went wrong !']);
         }    
+    }
+
+    public function test(){
+
+    $faker = Faker::create();
+
+    // Use a loop to generate and insert fake data
+    for ($i = 0; $i < 2000; $i++) { // Change 10 to the number of fake data records you want
+        // $name = $faker->name;
+        // $status = $faker->randomElement(['2', '1','3','4','5']); // Assuming 'status' is a random choice between 'Active' and 'Inactive'
+        // $urls = $faker->url;
+        // $location = $faker->city;
+        // $company_name = $faker->company;
+        // $address = $faker->address;
+        // $email = $faker->unique()->safeEmail;
+        // $phone = $faker->phoneNumber;
+
+        // $leads_id = Leads::insertGetId([
+        //     'name' => $name,
+        //     'status' => $status,
+        //     'url' => $urls,
+        //     'location' => $location,
+        //     'company_name' => $company_name,
+        //     'address' => $address,
+        //     'email' => $email,
+        //     'phone' => $phone,
+        //     'profile_image' => "assets/admin/img/profile/profile-11.webp",
+        //     'created_at' => now(),
+        //     'updated_at' => now()
+        // ]);
+
+        $tags = implode(',', $faker->words(rand(1, 5))); // Generate random words and join them with commas
+
+        LeadsNote::insert([
+            'lead_id' => $faker->numberBetween(1, 100), // Modify as needed
+            'note' => $faker->paragraph(),
+            'tags' => $tags,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+    }
+
+    return "Fake data inserted into the 'leads' table.";
+
     }
 }
