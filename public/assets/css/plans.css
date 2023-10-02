@@ -1,0 +1,212 @@
+/* body {
+    background-color: var(--light-text);
+} */
+.main-header .navbar{
+    box-shadow: 2px 2px 8px 0 rgba(0,0,0,.1);
+}
+
+.main-header .navbar .navbar-nav .nav-item a{
+    margin-right: 10px;
+    font-weight: 600;
+    color: #000;
+}
+.main-header .navbar .navbar-nav .nav-item:last-child a{
+    margin-right: 0px;
+}
+
+/* menu icon */
+
+.navbar-toggler span {
+  display: block;
+  background-color: #4f4f4f;
+  height: 3px;
+  width: 25px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  position: relative;
+  left: 0;
+  opacity: 1;
+  transition: all 0.35s ease-out;
+  transform-origin: center left;
+}
+
+.navbar-toggler span:nth-child(1) {
+  transform: translate(0%, 0%) rotate(0deg);
+}
+
+.navbar-toggler span:nth-child(2) {
+  opacity: 1;
+}
+
+.navbar-toggler span:nth-child(3) {
+  transform: translate(0%, 0%) rotate(0deg);
+}
+
+.navbar-toggler span:nth-child(1) {
+  margin-top: 0.3em;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+  transform: translate(15%, -33%) rotate(45deg);
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+  transform: translate(15%, 33%) rotate(-45deg);
+}
+.main-header .navbar .navbar-nav .nav-item .btn-outline-dark{
+   color: #000;
+}
+.main-header .navbar .navbar-nav .nav-item .btn-dark{
+    background-color: #000;
+}
+@media only screen and (max-width: 767px) {
+    .main-header .navbar .navbar-nav{
+        border-top: solid 1px #eee;
+    }
+    .main-header .navbar .navbar-nav .nav-item a{
+        margin: 6px 0;
+        display: block;
+        font-size: 20px;
+    }
+    .main-header .navbar .navbar-brand img {
+        height: 18px;
+    }
+    .main-header .navbar .navbar-nav .nav-item .btn{
+        padding: 12px 2px;
+        font-size: 14px;
+        border-radius: 100px;
+    }
+    
+}
+.main-banner {
+    margin-top: 56px;
+    /* padding: 100px 0; */
+    padding: 50px 0 0 0;
+}
+.inner-banner{
+    /*margin-top: 71px;*/
+    padding: 30px 0;
+}
+@media only screen and (max-width: 767px) {
+    .main-banner {
+        margin-top: 71px;
+        padding: 40px 0 0 0;
+    }
+    .banner-info h1{
+        font-size: 28px;
+    }
+}
+.section-title .title {
+    font-size: 32px;
+    line-height: 1;
+    /* color: #FF6600; */
+    position: relative;
+    margin-bottom: 10px;
+}
+@media only screen and (max-width: 767px) {
+    .section-title .title {
+        font-size: 24px;
+    }
+}
+.section-title .lines {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.section-title .lines span {
+    display: flex;
+    width: 90px;
+    height: 2px;
+    background-color: #000;
+    /* background-color: #FF6600; */
+    /* background-color: var(--dark); */
+}
+.section-title .lines span:last-child {
+    width: 60px;
+    margin-top: 2px;
+}
+.nutrition-list .nutritional-items {
+    border-bottom: dashed 1px #999;
+}
+.bg-black{
+    background-color: black;
+}
+
+
+/* New Banner css */
+.hero-bgimage {
+    background-image: url("../plan-img/hero_iphone_14.jpg");
+}
+.hero-bgimage {
+    width: 961px;
+    height: 393px;
+    background-size: 961px 393px;
+    background-repeat: no-repeat;
+    /* background-image: url(/v/iphone/home/bo/images/overview/hero/hero_iphone_14_pro__e8bufymdlseq_large.jpg); */
+    position: relative;
+    left: 50%;
+    margin-left: -480.5px;
+    margin-bottom: 0px;
+}
+
+.trade-in-image {
+    background-image: url("../plan-img/trade_in__large.jpg");
+}
+.trade-in-image {
+    width: 675px;
+    height:290px;
+    background-size: 675px 311px;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 34%;
+    margin-left: -228.5px;
+    margin-bottom: 0;
+}
+.acmi-image {
+    background-image: url("../plan-img/apple_card_large.jpg");
+}
+.acmi-image {
+    width: 465px;
+    height: 291px;
+    background-size: 465px 310px;
+    background-repeat: no-repeat;
+    position: relative;
+    left: 50%;
+    margin-left: -233px;
+}
+@media only screen and (max-width:767px){
+    .hero-bgimage {
+        height: 140px;
+    }
+    .trade-in-image {
+        height: 163px;
+    }
+    .acmi-image {
+        height: 220px;
+    }
+    .hero-bgimage, .trade-in-image, .acmi-image {
+        width: 100%;
+        background-size: 100%;
+        position: relative;
+        left: 0;
+        margin-left: 0;
+        margin-bottom: 0px;
+    }
+}
+
+.right-menus .dropdown-menu.wide {
+    width: calc(var(--nav-size) - calc(var(--main-spacing-vertical)));
+    padding: 20px;
+}
+.notification-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 100px;
+    background: #fc0606;
+    top: -2px;
+    right: 0;
+}
